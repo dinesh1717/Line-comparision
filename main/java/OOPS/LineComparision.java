@@ -7,15 +7,23 @@ public class LineComparision {
         return length;
     }
 
-    public static int LengthEquality(double length1, double lenght2) {
-        if (length1 == lenght2) {
+    public static int LengthEquality(double length1, double length2) {
+        if (length1 == length2) {
             System.out.println("Both the line are equal in size");
-        } else if (length1 > lenght2) {
+        } else if (length1 > length2) {
             System.out.println("First line is bigger in size");
         } else {
             System.out.println("Second line is bigger in size");
         }
         return 0;
+    }
+    @SuppressWarnings("removal")
+    public static int LengthCompare(double length1, double length2) {
+        int flag;
+        Double len = new Double(length1);
+        Double len1 = new Double(length2);
+        flag = len.compareTo(len1);
+        return flag;
     }
 
     public static void main(String[] args) {
@@ -37,6 +45,7 @@ public class LineComparision {
         double length2 = lengthCalc(a1, b1, a2, b2);
 
         int length = LengthEquality(length1, length2);
+        int flag = LengthCompare(length1, length2);
 
     }
 }
